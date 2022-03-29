@@ -1,3 +1,7 @@
+//Minha implementação do print para testes
+function print(variavel){
+    console.log(variavel)
+}
 //Minha implementação do gets(). Não usar no desafio. O gets() já é implementado no sistema
 function gets(pergunta) {
     let valor = prompt(pergunta);
@@ -40,6 +44,9 @@ for (i = 0; i < M; i++) {
 }
 
 //Para saber quantas faltam basta ver o tamanho do Set e subtraí-lo do número total de espaços
-console.log(`Faltam ${N - setFig.size}`);
-console.log(`Tenho as seguintes figurinhas repetidas: ${figurinhasRepetidas}`);
+print(`Faltam ${N - setFig.size}`);
+if(figurinhasRepetidas.length > 0){
+    console.log(`Tenho as seguintes figurinhas repetidas: ${figurinhasRepetidas}`);
+}
+
 

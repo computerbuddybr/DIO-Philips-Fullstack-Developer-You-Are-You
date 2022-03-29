@@ -1,10 +1,14 @@
 /**
- * Para quem for fazer o desafio.Adaptei o código para poder testar em um IDE
+ * Para quem for fazer o desafio. Adaptei o código para poder testar em um IDE
  * O que você vai querer usar, é a lógica do if/else, e o valor do console.log
  * mas não altere nada mais no código deles.
  * Eu troquei os print por console.log e já fiz um array lines para lidar com
  * os valores entregues.
  */
+//Minha implementação do print para testes
+function print(variavel){
+    console.log(variavel)
+}
 let lines = [];
 function gets(){
     let valor1 = prompt("Digite o valor de porcentagem encontrado a duas noites atrás: ");
@@ -29,11 +33,11 @@ console.log(`Valor de hoje: ${final}%`);
 
 //Parte que temos que completar. Eu substitui os print por console.log
 if (inicio >= 0 && final <= 2) {
-    console.log('nova\n');
+    print('nova\n');
 } else if (final > inicio && inicio >= 3 &&  final <= 96) {
-    console.log('crescente\n');
+    print('crescente\n');
 } else if (final < inicio && final <= 3) {
-    console.log('minguante\n');                 //complete o código nos espaços em branco
+    print('minguante\n');                 //complete o código nos espaços em branco
 } else {
-    console.log('cheia\n');
+    print('cheia\n');
 }
