@@ -1,3 +1,6 @@
+//Explicando como o jogo funciona
+alert("O objetivo do jogo é pular os obstáculos. Você precisará escolher uma tecla para fazer os pulos.\n Basta clicar na tecla desejada no seu teclado depois de clicar em ok aqui.\n O jogo só começa após clicar na tecla.\n Se quiser pode alterar o tema clicando no Mario ou no Dinossauro, ou trocar de nível clicando nos botões Fácil, Médio ou Díficl.")
+
 //Constantes criadas par a manipulação do HTML
 const avatar = document.querySelector('#avatar');
 const background = document.querySelector('.background');
@@ -11,12 +14,12 @@ const actualPoints = document.querySelector('.points');
 
 
 //Intervalo de movimento, quanto mais díficil mais rápido o obstacleTiming
-let avatarTiming = 20;
+let avatarTiming = 50;
 let obstacleTiming = 60;
 let avatarPosition = 0;
 
 //Altura que o dino pula, quanto mais alto mais fácil
-let jumpHeight = 300;
+let jumpHeight = 400;
 
 //Deixando a pessoa escolher a tecla que quer usar
 //Variável para controlar se é a primeira vez que a tecla é pressionada
@@ -99,8 +102,8 @@ function jump() {
 
         }
     }, avatarTiming);
-    //A cada pulo ele ganha 10 pontos
-    pontuacao += 10;
+
+
 
 }
 
@@ -126,6 +129,7 @@ function createObstacle() {
         } else if (obstaclePosition > 0 && obstaclePosition < 60) {
             //Aqui controlo se o jogo já está valendo com a variável playing
             if (avatarPosition < 60 && playing === true) {
+
                 //Verificamos que houve colisão entre avatar e obstáculo então mostro a pontuação final ao meu usuário e recarrego a página para poder jogar novamente
                 clearInterval(leftInterval);
                 gameOver = true;
@@ -135,7 +139,8 @@ function createObstacle() {
 
             } else {
                 if (playing) {
-                    //Mostro os pontos ao placar
+                    //Mostro os pontos ao placar depois de adicionar os novos
+                    pontuacao += 1;
                     actualPoints.innerHTML = pontuacao;
                 }
 
@@ -171,20 +176,20 @@ function themeChange(theme) {
     }
 }
 
-//Trocando de nível
+//Trocando de nível. Ao aumentar a dificuldade o obstáculo se move mais rápido e o avatar pula mais rápido.
 function changeLevel(level) {
     switch (level) {
         case 'easy':
-            jumpHeight = 300;
             obstacleTiming = 60;
+            avatarTiming = 60;
             break;
         case 'medium':
-            jumpHeight = 200;
-            obstacleTiming = 40;
+            obstacleTiming = 50;
+            avatarTiming = 40;
             break;
         case 'hard':
-            jumpHeight = 150;
-            obstacleTiming = 20;
+            obstacleTiming = 60;
+            avatarTiming = 20;
             break;
         default:
             jumpHeight = 300;

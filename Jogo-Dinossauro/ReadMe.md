@@ -16,6 +16,8 @@ Possibilitei que a pessoa escolhesse seu tema. Sendo Mario com um avatar do Mari
 
 O usuário também pode escolhera tecla que vai usar para pular. isto porque para algumas pessoas pode fazer mais sentido usar a seta ou até o enter.
 
-Adicionei três níveis de dificuldade. A medida que a dificuldade aumenta o obstáculo vem mais rápido e o avatar pula mais baixo. 
+Adicionei três níveis de dificuldade. A medida que a dificuldade aumenta o obstáculo vem mais rápido e o avatar pula mais rápido. 
 
-Também adicionei pontuação com 10 pontos cada vez que o avatar pula. 
+Também adicionei pontuação com 1 ponto cada vez que o avatar evita o obstáculo com sucesso. 
+
+Adicionei uma explicação de como jogar.
