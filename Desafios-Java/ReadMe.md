@@ -1,0 +1,1 @@
+Minhas resoluçõe para os desafios do Bootcamp da DIO. Coloco sempre um ReadMe com o enunciado. Cuidado porque muitas vezes eu coloco algumas linhas adicionais de código para ajudar no debuggig e raciocínio. Essas linhas não podem ir no editor da DIO ou o programa não passará os testes.
