@@ -20,7 +20,7 @@ const setFig = new Set();
 let figurinhasRepetidas = [];
 
 //Faço um loop pedindo o número de cada figurinha comprada. Ele vai considerar o número total de figurinhas compradas e não o número total de espaços. O que pode acarretar em serem digitadas figurinhas repetidas.
-for (i = 0; i < M; i++) {
+for (let i = 0; i < M; i++) {
     let x = gets('Favor digitar o número da figurinha comprada');
     //Verifico que seja um número válido maior que 1. Essa verificação neste código é redundante pois o gets já verifica isto, mas deixei aqui pois não tenho acesso ao gets() implementado pela DIO para ver se essa verificação já é feita lá. Então na resposta é bom adicionar essa verificação.
     if (x < 1) {
