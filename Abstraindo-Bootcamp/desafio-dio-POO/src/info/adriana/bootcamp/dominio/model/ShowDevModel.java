@@ -1,19 +1,18 @@
 package info.adriana.bootcamp.dominio.model;
 
-import info.adriana.bootcamp.dominio.db.ConnectDB;
+import info.adriana.bootcamp.dominio.db.DBConnect;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ShowDevModel extends Dev{
-    private ConnectDB db;
+    private DBConnect db;
 
     public ShowDevModel() {
-        this.db = new ConnectDB();
+        this.db = new DBConnect();
         this.codigo = 1;
         this.readOneDev(this.codigo);
         this.showDevInfo();

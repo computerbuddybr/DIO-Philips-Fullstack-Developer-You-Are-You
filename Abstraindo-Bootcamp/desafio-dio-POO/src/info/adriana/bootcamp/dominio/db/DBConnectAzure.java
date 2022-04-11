@@ -1,21 +1,19 @@
 package info.adriana.bootcamp.dominio.db;
 
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+public class DBConnectAzure extends DBConnection {
 
-public class ConnectDB {
 
-    public Connection conexao;
-
-    public ConnectDB() {
+    public DBConnectAzure() {
         try{
 
-            final String URL = "jdbc:mysql://localhost:3306/bootcamp_dio";
-            final String USUARIO = "root";
-            final String SENHA = "root";
+            final String URL = "jdbc:sqlserver://localhost;database=boot_dio";
+            final String cadeia = "Server=localhost;Database=boot_dio;Trusted_Connection=True;";
+            final String USUARIO = "boot_dio";
+            final String SENHA = "dio";
 
             this.conexao = DriverManager.getConnection(URL, USUARIO, SENHA);
 
