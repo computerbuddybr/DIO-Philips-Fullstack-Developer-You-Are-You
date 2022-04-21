@@ -64,6 +64,10 @@ public class Main {
     }
 
 
+    /**
+     * Método para mostrar o conteúdo do dev de um modo mais bonito e prático do que o simples toString da lista fazia.
+     * @param dev
+     */
     public static void showContent(Dev dev) {
         System.out.println("Conteúdos Inscritos de " + dev.getName() + ":");
         Set<Content> subscribedContent = new LinkedHashSet<>();
