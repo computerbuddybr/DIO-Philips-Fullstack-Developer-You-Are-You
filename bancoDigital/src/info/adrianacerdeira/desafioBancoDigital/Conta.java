@@ -7,15 +7,15 @@ import java.util.List;
 
 abstract public class Conta {
 
-    protected int agencia;
-    protected int numeroConta;
+    private int agencia;
+    private int numeroConta;
 
     //Para questões de histórico das transações
-    protected double saldoIncial;
+    private double saldoIncial;
     protected double saldo;
-    protected Cliente cliente;
-    protected BancoExterno banco;
-    protected List<Transacao> transacoes = new ArrayList<>();
+    private Cliente cliente;
+    private BancoExterno banco;
+    private List<Transacao> transacoes = new ArrayList<>();
 
     protected String tipoConta;
 
@@ -63,6 +63,7 @@ abstract public class Conta {
      * @param valor
      * @param tipo
      * @param banco
+     * @param identificador
      */
     protected void transferencia(double valor, TiposTransacao tipo, BancoExterno banco, String identificador) {
 
@@ -76,7 +77,6 @@ abstract public class Conta {
     /**
      * Fazendo uma transferência
      * @param valor
-     * @param tipo
      * @param banco
      */
     public void transferirPara(double valor, BancoExterno banco){
@@ -87,7 +87,6 @@ abstract public class Conta {
     /**
      * Recebendo uma transferência
      * @param valor
-     * @param tipo
      * @param banco
      */
     public void traferenciaDe(double valor, BancoExterno banco){
