@@ -17,13 +17,16 @@ abstract public class Conta {
     protected BancoExterno banco;
     protected List<Transacao> transacoes = new ArrayList<>();
 
+    protected String tipoConta;
 
-    public Conta(int numeroConta, int agencia, double saldoInicial, Cliente cliente) {
+
+    public Conta(int numeroConta, int agencia, double saldoInicial, Cliente cliente, String tipoConta) {
         this.numeroConta = numeroConta;
         this.agencia = agencia;
         this.saldoIncial = saldoInicial;
         this.saldo = saldoInicial;
         this.cliente = cliente;
+        this.tipoConta = tipoConta;
     }
 
 
@@ -99,7 +102,7 @@ abstract public class Conta {
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy - HH:mm:ss");
         String dataEHora = formato.format(LocalDateTime.now());
         System.out.println(this.cliente);
-        System.out.println("Extrato da conta " + this.numeroConta + " da agência: " + this.agencia + " no dia " + dataEHora + ":");
+        System.out.println("Extrato da conta " + tipoConta + " " + this.numeroConta + " da agência: " + this.agencia + " no dia " + dataEHora + ":");
         System.out.println("\\*----------*/");
         System.out.println("Saldo Inicial: R$" + String.format("%.2f", this.saldoIncial));
         System.out.println("\\*----------*/");
