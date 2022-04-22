@@ -65,7 +65,7 @@ abstract public class Conta {
      * @param banco
      * @param identificador
      */
-    protected void transferencia(double valor, TiposTransacao tipo, BancoExterno banco, String identificador) {
+    protected void transferenciaExterna(double valor, TiposTransacao tipo, BancoExterno banco, String identificador) {
 
         Transacao transacao = new Transacao(valor, this, tipo, identificador);
 
@@ -75,23 +75,55 @@ abstract public class Conta {
     }
 
     /**
-     * Fazendo uma transferência
+     * Tranferências dentro do próprio banco
      * @param valor
-     * @param banco
+     * @param outraConta
      */
-    public void transferirPara(double valor, BancoExterno banco){
-        String identificador = "Tranferência para " + banco;
-        this.transferencia(valor, TiposTransacao.DECRECIMO, banco, identificador);
+    protected void transferenciaInterna(double valor, Conta outraConta) {
+
+        String identificadorEstaConta = "Transferência para conta: " + outraConta;
+        Transacao transacao = new Transacao(valor, this, TiposTransacao.DECRECIMO, identificadorEstaConta);
+
+        String identificadorOutraConta = "Transferência de conta: " + this;
+
+        Transacao transacaoOutraConta = new Transacao(valor, outraConta, TiposTransacao.ACRECIMO, identificadorOutraConta);
+
+        this.transacoes.add(transacao);
+        outraConta.transacoes.add(transacaoOutraConta);
     }
 
     /**
-     * Recebendo uma transferência
+     * Fazendo uma transferência para outro Banco
      * @param valor
      * @param banco
      */
-    public void traferenciaDe(double valor, BancoExterno banco){
+    public void transferirParaOutroBanco(double valor, BancoExterno banco){
+        String identificador = "Tranferência para " + banco;
+        this.transferenciaExterna(valor, TiposTransacao.DECRECIMO, banco, identificador);
+    }
+
+    /**
+     * Recebendo uma transferência de Outro Banco
+     * @param valor
+     * @param banco
+     */
+    public void traferenciaDeOutroBanco(double valor, BancoExterno banco){
         String identificador = "Transferência de " + banco;
-        this.transferencia(valor, TiposTransacao.ACRECIMO, banco, identificador);
+        this.transferenciaExterna(valor, TiposTransacao.ACRECIMO, banco, identificador);
+    }
+
+    /**
+     * Tranferindo dinheiro para uma conta deste banco
+     * @param valor
+     * @param outraConta
+     */
+    public void tranferirParaEsteBanco(double valor, Conta outraConta){
+        this.transferenciaInterna(valor, outraConta);
+
+    }
+
+    public void tranferirDeEsteBanco(){
+
     }
 
     /**
@@ -100,7 +132,9 @@ abstract public class Conta {
     public void extrato() {
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy - HH:mm:ss");
         String dataEHora = formato.format(LocalDateTime.now());
+        System.out.println("/*****/");
         System.out.println(this.cliente);
+        System.out.println("/*****/");
         System.out.println("Extrato da conta " + tipoConta + " " + this.numeroConta + " da agência: " + this.agencia + " no dia " + dataEHora + ":");
         System.out.println("\\*----------*/");
         System.out.println("Saldo Inicial: R$" + String.format("%.2f", this.saldoIncial));
@@ -125,4 +159,15 @@ abstract public class Conta {
         this.saldo = saldo;
     }
 
+    /**
+     * Para poder ser usado no detalhamento do extrato
+     * @return
+     */
+    @Override
+    public String toString() {
+        return  cliente + " " +
+                tipoConta +
+                " Agencia: " + agencia +
+                " Conta: " + numeroConta;
+    }
 }

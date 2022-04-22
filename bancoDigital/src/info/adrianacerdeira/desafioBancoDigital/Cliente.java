@@ -13,7 +13,7 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "\nCliente: " + nome +
-                " CPF: " + cpf + "\n";
+        return "Cliente: " + nome +
+                " CPF: " + cpf;
     }
 }

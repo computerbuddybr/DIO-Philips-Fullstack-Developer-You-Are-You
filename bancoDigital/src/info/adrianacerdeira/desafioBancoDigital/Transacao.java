@@ -27,8 +27,9 @@ public class Transacao {
         this.DATA_E_HORA = formato.format(LocalDateTime.now());
         this.VALOR = valor;
         this.TIPO = tipo;
-        this.SINAL = this.realizaTransacao(conta);
         this.identificador = identificador;
+        this.SINAL = this.realizaTransacao(conta);
+
     }
 
     /**
