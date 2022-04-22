@@ -31,7 +31,7 @@ public class Transacao {
     }
 
     /**
-     * Função que vai lidar com descidir qual o tipo da transação e aplicá-la ao saldo da Conta
+     * Função que vai lidar com decidir qual o tipo da transação e aplicá-la ao saldo da Conta
      * @param conta
      */
     public String realizaTransacao(Conta conta){
@@ -47,39 +47,6 @@ public class Transacao {
 
     }
 
-    /**
-     * Somente o construtor deve poder atribuir os valores das propriedades e por isso só forneço getters e não setters.
-     * @return
-     */
-
-    public TiposTransacao getTIPO() {
-        return TIPO;
-    }
-
-
-
-    public double getVALOR() {
-        return VALOR;
-    }
-
-
-    public String getSINAL() {
-        return SINAL;
-    }
-
-
-
-    public String getDATA_E_HORA() {
-        return DATA_E_HORA;
-    }
-
-    public String getIdentificador() {
-        return identificador;
-    }
-
-    public void setIdentificador(String identificador) {
-        this.identificador = identificador;
-    }
 
     @Override
     public String toString() {

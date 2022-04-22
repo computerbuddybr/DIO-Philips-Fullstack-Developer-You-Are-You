@@ -13,22 +13,6 @@ public class BancoExterno {
         this.conta = conta;
     }
 
-    public String getNomeBanco() {
-        return nomeBanco;
-    }
-
-    public int getCodigoBanco() {
-        return codigoBanco;
-    }
-
-    public int getAgencia() {
-        return agencia;
-    }
-
-    public int getConta() {
-        return conta;
-    }
-
     @Override
     public String toString() {
         return "Banco: " + nomeBanco +

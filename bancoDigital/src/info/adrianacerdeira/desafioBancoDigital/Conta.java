@@ -113,21 +113,7 @@ abstract public class Conta {
     }
 
 
-    public int getAgencia() {
-        return agencia;
-    }
-
-    public void setAgencia(int agencia) {
-        this.agencia = agencia;
-    }
-
-    public int getNumeroConta() {
-        return numeroConta;
-    }
-
-    public void setNumeroConta(int numeroConta) {
-        this.numeroConta = numeroConta;
-    }
+    //Este é a única propriedade do sistema em que deixei um Setter pela necessidade de alterá-la na classe Transação para evitar duplicação de código. Mas todas as outras busquei usar só Getters para proteger a propriedade de alterações indevidas. E mesmo assim somente onde realmente precisei usar o getter.
 
     public double getSaldo() {
         return saldo;
@@ -137,27 +123,4 @@ abstract public class Conta {
         this.saldo = saldo;
     }
 
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
-
-    public BancoExterno getBanco() {
-        return banco;
-    }
-
-    public void setBanco(BancoExterno banco) {
-        this.banco = banco;
-    }
-
-    public List<Transacao> getTransacoes() {
-        return transacoes;
-    }
-
-    public void setTransacoes(List<Transacao> transacoes) {
-        this.transacoes = transacoes;
-    }
 }
