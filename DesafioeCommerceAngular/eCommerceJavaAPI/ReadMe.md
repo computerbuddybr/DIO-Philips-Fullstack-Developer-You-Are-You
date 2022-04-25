@@ -33,7 +33,7 @@ http://localhost:8080/books/precoMin/precoMax
 Filtrar por autor:
 http://localhost:8080/authors/author_code
 
-**Meus inserts para popular as tabelas para criar dados estão no arquivo [!sqlUsado.sql](../sqlUsado.sql)**
+**Meus inserts para popular as tabelas para criar dados estão no arquivo [sqlUsado.sql](../sqlUsado.sql)**
 
 
 
