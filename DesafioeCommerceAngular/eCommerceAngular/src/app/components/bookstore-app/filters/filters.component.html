@@ -5,19 +5,12 @@
   </div>
   <div class="card-body">
 
-    <form method="get" action="#">
-      <div class="form-group">
-        <label for="authors">Autor</label>
-        <div id="authors" class="form-control" >
-          <span *ngFor="let authorInfo of authorsInfo">
+
+        <div id="authors"  *ngFor="let authorInfo of authorsInfo">
             <app-author-filter-item [authorInfo]="authorInfo"></app-author-filter-item>
-          </span>
 
         </div>
-      </div>
-      <input type="submit" value="Filtrar" class="btn btn-primary btn-block btn-sm" name="submitAuthorForm">
 
-    </form>
 
   </div>
   <div class="card-header">
@@ -39,7 +32,9 @@
         <br>
         Valor selecionado: {{ maxPrice }}
       </div>
-      <input type="submit" value="Filtrar" class="btn btn-primary btn-block btn-sm" name="submitPriceForm">
+      <input type="submit" value="Filtrar" class="btn btn-primary btn-block btn-sm" name="submitPriceForm" (click)="onFilterByMinAndMaxPriceFormSend($event)">
+      <br>
+      Testando : {{ paraTestar}}
 
     </form>
   </div>

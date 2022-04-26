@@ -13,7 +13,11 @@ export class AuthorFilterItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log("Inside filter component:");
+
+
+  }
+
+  onAuthor(event:any){
 
   }
 

@@ -15,4 +15,8 @@ export class AuthorItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onAuthorsBooks(event: any){
+
+  }
+
 }

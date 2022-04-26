@@ -11,6 +11,7 @@ export class FiltersComponent implements OnInit {
   authorsServices :  AuthorsServices;
   minPrice: any;
   maxPrice: any;
+  paraTestar: string = "";
 
 
   constructor(authorsService :  AuthorsServices) {
@@ -22,6 +23,13 @@ export class FiltersComponent implements OnInit {
       this.authorsInfo = data;
 
     }));
+  }
+
+  onFilterByAuthorFormSend(event: any){
+      this.paraTestar = "Cliquei no botão do autor";
+  }
+  onFilterByMinAndMaxPriceFormSend(event: any){
+    this.paraTestar = "Cliquei no botão do preço";
   }
 
 }

@@ -15,4 +15,13 @@ export class ProductItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onBuy(event: any){
+    console.log(event);
+    //TODO: adicionar ao carrinho
+  }
+  onDetails(event: any){
+    console.log(event);
+    //TODO:ir para página e passar o id para a página
+  }
+
 }

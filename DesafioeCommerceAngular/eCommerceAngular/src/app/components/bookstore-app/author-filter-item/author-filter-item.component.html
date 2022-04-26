@@ -1,2 +1,2 @@
-<input class="radioButton" type="radio" id="{{ authorInfo.id }}" name="authorsFilter" value="{{ authorInfo.id }}">
-<label for="{{ authorInfo.id }}"> {{ authorInfo.name }}</label> <br>
+<a class="btn btn-primary authors" href="authors/{{authorInfo.id}}" (click)="onAuthor($event)">{{authorInfo.name}}</a>
+<br>
