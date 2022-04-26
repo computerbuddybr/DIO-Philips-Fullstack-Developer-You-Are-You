@@ -15,6 +15,9 @@ import {AuthorItemComponent} from './components/bookstore-app/author-item/author
 import {HttpClientModule} from "@angular/common/http";
 import {BooksService} from "./components/bookstore-app/product-list/product-list.component.service";
 import {AuthorsServices} from "./components/bookstore-app/author-list/author-list.component.service";
+import { AuthorFilterItemComponent } from './components/bookstore-app/author-filter-item/author-filter-item.component';
+import {FormsModule} from "@angular/forms";
+
 
 
 @NgModule({
@@ -28,11 +31,13 @@ import {AuthorsServices} from "./components/bookstore-app/author-list/author-lis
     ProductListComponent,
     ProductItemComponent,
     AuthorListComponent,
-    AuthorItemComponent
+    AuthorItemComponent,
+    AuthorFilterItemComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     BooksService,

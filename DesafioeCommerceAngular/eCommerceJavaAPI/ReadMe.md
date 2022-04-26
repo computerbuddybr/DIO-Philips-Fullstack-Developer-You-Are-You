@@ -15,6 +15,7 @@ Cada livro é um objeto com:
 id : int;
 author : int;
 title : string;
+description: string;
 price : double;
 ```
 
@@ -26,6 +27,9 @@ Cada autor é um objeto com:
 id : int;
 name : string;
 ```
+
+Retornar um único livro
+http://localhost:8080/books/id
 
 Filtrar livros por preço:
 http://localhost:8080/books/precoMin/precoMax

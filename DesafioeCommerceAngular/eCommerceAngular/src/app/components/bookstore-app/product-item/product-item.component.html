@@ -7,8 +7,8 @@
     <p>Preço: {{ book.price | currency: 'BRL' }}</p>
 
     <div class="btn-group">
-      <button type="button" class="btn btn-sm btn-primary">Comprar</button>
-      <button type="button" class="btn btn-sm btn-outline-primary">Detalhes</button>
+      <a class="btn btn-primary" href="books/{{book.id}}">Comprar</a>
+      <a class="btn btn-info" href="books/{{book.id}}">Detalhes</a>
     </div>
 
 

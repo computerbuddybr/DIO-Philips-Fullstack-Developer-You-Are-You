@@ -31,6 +31,16 @@ div.cabecalho{
   font-weight: bold;
 
 }
+a.bookstoreTitle{
+  text-decoration: none;
+  color:#FFFFFF;;
+
+}
+a.bookstoreTitle:hover{
+  color:#CCCCCC;
+
+}
+
 
 a.nav-link{
   color:#FFFFFF;
@@ -68,6 +78,9 @@ div.card{
 div.form-group{
   padding:0.5em;
 }
+input.radioButton{
+  margin:0.5em;
+}
 /****
 Product List component
 ****/
@@ -90,17 +103,43 @@ img.author
   border-radius: 5px;
   box-shadow: 2px 2px rgba(204,204,204,.8);
 }
+a.btn.btn-info{
+  background-color: #ac71ef;
+  color:#FFFFFF;
+  border-color:#ac71ef;
+
+}
+a.btn.btn-info:hover{
+  background-color:#FFFFFF;
+  color:#ac71ef;
+}
+
+input.btn.btn-primary,
+button.btn.btn-primary,
+a.btn.btn-primary{
+  background-color: #6e09e2;
+  color:#FFFFFF;
+  border-color: #6e09e2;
+}
+
+input.btn.btn-primary:hover,
+button.btn.btn-primary:hover,
+a.btn.btn-primary:hover{
+  background-color: #FFFFFF;
+  color:#6e09e2;
+}
+
 /****
 Footer
 ****/
 footer.text-center{
-  background-color: #6e09e2;
-  padding:0.1em;
+  padding:1em;
   width:100%;
 
 }
 a.footer{
   color:#FFFFFF;
+  text-decoration: none;
 }
 a.footer:hover{
   color:#CCCCCC;
