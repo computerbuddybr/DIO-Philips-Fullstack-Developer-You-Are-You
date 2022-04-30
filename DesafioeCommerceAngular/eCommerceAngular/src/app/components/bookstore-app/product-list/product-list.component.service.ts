@@ -29,8 +29,10 @@ export class BooksService{
    * @param maxPrice
    */
   getBooksByPrice(minPrice: number, maxPrice:number){
-    let urlToUse: string = this.urlBooksByPrice + "/" + minPrice + "/" + maxPrice;
+    let urlToUse: string = this.urlBooksByPrice + minPrice + "/" + maxPrice;
+
     return this.http.get(urlToUse);
+
   }
 
   /**
@@ -39,8 +41,19 @@ export class BooksService{
    * @param maxPrice
    */
   getBooksByAuthor(authorID: number){
-    let urlToUse: string = this.urlBooksByAuthor + "/" + authorID
-    return this.http.get(urlToUse);
+    let useURL: string = this.urlBooksByAuthor + authorID;
+
+    return this.http.get(useURL);
+  }
+
+  /**
+   * Get a book by the id
+   * @param id
+   */
+  getBookByID(id:number){
+    let thisURL: string = this.urlBooksByPrice + id;
+
+    return this.http.get(thisURL);
   }
 
 }

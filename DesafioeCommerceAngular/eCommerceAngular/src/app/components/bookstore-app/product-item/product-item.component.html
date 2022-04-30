@@ -7,8 +7,8 @@
     <p>Preço: {{ book.price | currency: 'BRL' }}</p>
 
     <div class="btn-group">
-      <a class="btn btn-primary" href="books/{{book.id}}" (click)="onBuy($event)">Comprar</a>
-      <a class="btn btn-info" href="books/{{book.id}}" (click)="onDetails($event)">Detalhes</a>
+
+      <a class="btn btn-info" [routerLink]="['/books', book.id]">Detalhes</a>
     </div>
 
 

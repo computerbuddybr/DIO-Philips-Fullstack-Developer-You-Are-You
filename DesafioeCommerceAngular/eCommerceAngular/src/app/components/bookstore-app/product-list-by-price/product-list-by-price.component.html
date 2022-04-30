@@ -1,1 +1,8 @@
-<p>product-list-by-price works!</p>
+<div class="row book-list">
+  <div class="col" *ngFor="let book of books">
+    <app-product-item [book]="book">
+
+    </app-product-item>
+  </div>
+
+</div>

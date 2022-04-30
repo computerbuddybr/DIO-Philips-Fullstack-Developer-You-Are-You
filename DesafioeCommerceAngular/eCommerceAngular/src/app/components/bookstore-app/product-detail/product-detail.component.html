@@ -1,1 +1,19 @@
-<p>product-detail works!</p>
+<div class="product-detail text-center">
+  <h2 >
+    {{ books.title }}
+  </h2>
+  <div class="imageBook">
+    <img class="bookImg" alt="Capa do livro {{ books.title }}"src="{{'assets/images/books/' + books.id + '.png'}}">
+  </div>
+    <p>Preço: {{ books.price | currency: 'BRL' }}</p>
+  <p>Descrição: </p>
+    <div class="text-start">
+
+
+      {{ books.description }}
+    </div>
+</div>
+
+
+
+
