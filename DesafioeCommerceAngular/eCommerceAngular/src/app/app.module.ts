@@ -17,8 +17,13 @@ import {BooksService} from "./components/bookstore-app/product-list/product-list
 import {AuthorsServices} from "./components/bookstore-app/author-list/author-list.component.service";
 import { AuthorFilterItemComponent } from './components/bookstore-app/author-filter-item/author-filter-item.component';
 import {FormsModule} from "@angular/forms";
+import {RouterModule, Routes} from "@angular/router";
 
-
+const appRoutes: Routes = [
+  { path: '', component: BookstoreAppComponent},
+  { path: 'books', component: ProductListComponent},
+  { path: 'authors', component: AuthorListComponent }
+];
 
 @NgModule({
   declarations: [
@@ -37,7 +42,8 @@ import {FormsModule} from "@angular/forms";
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     BooksService,

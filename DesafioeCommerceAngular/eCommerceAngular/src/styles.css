@@ -48,6 +48,11 @@ a.nav-link{
 a.nav-link:hover{
   color:#CCCCCC;
 }
+a.nav-link:active,
+a.nav-link:current
+{
+  color: #000000;
+}
 
 a.btn.btn-outline-primary{
   margin:1em;

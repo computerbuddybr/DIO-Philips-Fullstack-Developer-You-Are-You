@@ -22,19 +22,14 @@
       <div class="form-group">
         <label for="minPrice">De</label>
         <input type="number" id="minPrice" name="minPrice" class="form-control" [(ngModel)]="minPrice">
-        <br>
-        Valor selecionado: {{ minPrice }}
 
       </div>
       <div class="form-group">
         <label for="maxPrice">Até</label>
         <input type="number" id="maxPrice" name="maxPrice" class="form-control" [(ngModel)]="maxPrice">
-        <br>
-        Valor selecionado: {{ maxPrice }}
+
       </div>
-      <input type="submit" value="Filtrar" class="btn btn-primary btn-block btn-sm" name="submitPriceForm" (click)="onFilterByMinAndMaxPriceFormSend($event)">
-      <br>
-      Testando : {{ paraTestar}}
+      <a class="btn btn-primary btn-block btn-sm" [routerLink]="['books', minPrice, maxPrice]">Filtrar</a>
 
     </form>
   </div>

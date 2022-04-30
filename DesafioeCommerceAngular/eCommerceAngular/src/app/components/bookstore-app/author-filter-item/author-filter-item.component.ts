@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Author} from "../author-list/model/Author";
+import {BooksService} from "../product-list/product-list.component.service";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 
 @Component({
   selector: 'app-author-filter-item',
@@ -10,15 +12,25 @@ export class AuthorFilterItemComponent implements OnInit {
 
   @Input()
   authorInfo!: Author;
-  constructor() { }
+  books: any;
+  booksServices: BooksService;
+
+
+
+  constructor(booksServices: BooksService) {
+    this.booksServices = booksServices;
+  }
 
   ngOnInit(): void {
 
 
   }
 
-  onAuthor(event:any){
-
+  onAuthor(id:number){
+    this.books = this.booksServices.getBooksByAuthor(id).subscribe((data => {
+      this.books = data;
+      //console.log(this.books);
+    }));
   }
 
 }
