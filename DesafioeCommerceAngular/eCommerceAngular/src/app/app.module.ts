@@ -18,11 +18,17 @@ import {AuthorsServices} from "./components/bookstore-app/author-list/author-lis
 import { AuthorFilterItemComponent } from './components/bookstore-app/author-filter-item/author-filter-item.component';
 import {FormsModule} from "@angular/forms";
 import {RouterModule, Routes} from "@angular/router";
+import { ProductDetailComponent } from './components/bookstore-app/product-detail/product-detail.component';
+import { ProductListByAuthorComponent } from './components/bookstore-app/product-list-by-author/product-list-by-author.component';
+import { ProductListByPriceComponent } from './components/bookstore-app/product-list-by-price/product-list-by-price.component';
 
 const appRoutes: Routes = [
   { path: '', component: BookstoreAppComponent},
   { path: 'books', component: ProductListComponent},
-  { path: 'authors', component: AuthorListComponent }
+  { path: 'books/:bookID', component: ProductDetailComponent},
+  { path: 'books/:minPrice/:maxPrice', component: ProductListByPriceComponent},
+  { path: 'authors', component: AuthorListComponent },
+  { path: 'authors/:authorID', component: ProductListByAuthorComponent }
 ];
 
 @NgModule({
@@ -37,7 +43,10 @@ const appRoutes: Routes = [
     ProductItemComponent,
     AuthorListComponent,
     AuthorItemComponent,
-    AuthorFilterItemComponent
+    AuthorFilterItemComponent,
+    ProductDetailComponent,
+    ProductListByAuthorComponent,
+    ProductListByPriceComponent
   ],
   imports: [
     BrowserModule,

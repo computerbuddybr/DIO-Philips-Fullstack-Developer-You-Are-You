@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Author} from "../author-list/model/Author";
 import {BooksService} from "../product-list/product-list.component.service";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-author-filter-item',
@@ -12,13 +13,12 @@ export class AuthorFilterItemComponent implements OnInit {
 
   @Input()
   authorInfo!: Author;
-  books: any;
-  booksServices: BooksService;
 
 
 
-  constructor(booksServices: BooksService) {
-    this.booksServices = booksServices;
+
+  constructor() {
+
   }
 
   ngOnInit(): void {
@@ -26,11 +26,6 @@ export class AuthorFilterItemComponent implements OnInit {
 
   }
 
-  onAuthor(id:number){
-    this.books = this.booksServices.getBooksByAuthor(id).subscribe((data => {
-      this.books = data;
-      //console.log(this.books);
-    }));
-  }
+
 
 }
