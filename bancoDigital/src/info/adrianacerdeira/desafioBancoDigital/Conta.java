@@ -122,9 +122,6 @@ abstract public class Conta {
 
     }
 
-    public void tranferirDeEsteBanco(){
-
-    }
 
     /**
      * Para mostrar o histórico de transações
