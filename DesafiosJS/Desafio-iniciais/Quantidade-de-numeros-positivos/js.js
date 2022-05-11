@@ -18,7 +18,7 @@ for (let i = 0; i < 6; i++) {
 
     const valorInformadoPeloUsuario = gets(i);
     valoresDigitados.push(valorInformadoPeloUsuario);
-    c
+    
     if(valorInformadoPeloUsuario > 0){
         quantidadePositivos++;
     }
